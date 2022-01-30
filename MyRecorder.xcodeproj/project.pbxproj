@@ -14,6 +14,7 @@
 		8A11099227A722F9008B81C0 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11099127A722F9008B81C0 /* AudioRecorder.swift */; };
 		8A11099427A728F0008B81C0 /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11099327A728F0008B81C0 /* RecordingsList.swift */; };
 		8A11099627A73918008B81C0 /* RecordingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11099527A73918008B81C0 /* RecordingDataModel.swift */; };
+		8A11099827A73A6C008B81C0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11099727A73A6C008B81C0 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8A11099127A722F9008B81C0 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		8A11099327A728F0008B81C0 /* RecordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
 		8A11099527A73918008B81C0 /* RecordingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDataModel.swift; sourceTree = "<group>"; };
+		8A11099727A73A6C008B81C0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +43,6 @@
 		8A11097727A7122F008B81C0 = {
 			isa = PBXGroup;
 			children = (
-				8A11099527A73918008B81C0 /* RecordingDataModel.swift */,
 				8A11098227A7122F008B81C0 /* MyRecorder */,
 				8A11098127A7122F008B81C0 /* Products */,
 			);
@@ -60,7 +61,9 @@
 			children = (
 				8A11098327A7122F008B81C0 /* MyRecorderApp.swift */,
 				8A11099327A728F0008B81C0 /* RecordingsList.swift */,
+				8A11099727A73A6C008B81C0 /* Helper.swift */,
 				8A11098527A7122F008B81C0 /* ContentView.swift */,
+				8A11099527A73918008B81C0 /* RecordingDataModel.swift */,
 				8A11099127A722F9008B81C0 /* AudioRecorder.swift */,
 				8A11098727A71232008B81C0 /* Assets.xcassets */,
 				8A11098927A71232008B81C0 /* Preview Content */,
@@ -151,6 +154,7 @@
 				8A11098627A7122F008B81C0 /* ContentView.swift in Sources */,
 				8A11098427A7122F008B81C0 /* MyRecorderApp.swift in Sources */,
 				8A11099427A728F0008B81C0 /* RecordingsList.swift in Sources */,
+				8A11099827A73A6C008B81C0 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
