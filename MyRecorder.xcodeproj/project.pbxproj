@@ -11,6 +11,7 @@
 		8A11098627A7122F008B81C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11098527A7122F008B81C0 /* ContentView.swift */; };
 		8A11098827A71232008B81C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A11098727A71232008B81C0 /* Assets.xcassets */; };
 		8A11098B27A71232008B81C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A11098A27A71232008B81C0 /* Preview Assets.xcassets */; };
+		8A11099227A722F9008B81C0 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A11099127A722F9008B81C0 /* AudioRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		8A11098527A7122F008B81C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A11098727A71232008B81C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A11098A27A71232008B81C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8A11099127A722F9008B81C0 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				8A11098327A7122F008B81C0 /* MyRecorderApp.swift */,
 				8A11098527A7122F008B81C0 /* ContentView.swift */,
+				8A11099127A722F9008B81C0 /* AudioRecorder.swift */,
 				8A11098727A71232008B81C0 /* Assets.xcassets */,
 				8A11098927A71232008B81C0 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A11099227A722F9008B81C0 /* AudioRecorder.swift in Sources */,
 				8A11098627A7122F008B81C0 /* ContentView.swift in Sources */,
 				8A11098427A7122F008B81C0 /* MyRecorderApp.swift in Sources */,
 			);
@@ -272,6 +276,7 @@
 				DEVELOPMENT_TEAM = JKMGXM83KA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to access your microphone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +306,7 @@
 				DEVELOPMENT_TEAM = JKMGXM83KA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to access your microphone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
