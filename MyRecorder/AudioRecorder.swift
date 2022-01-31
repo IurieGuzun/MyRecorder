@@ -38,7 +38,7 @@ class AudioRecorder: NSObject, ObservableObject {
                     print("Failed to set up recording session")
                 }
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss")).m4a")
+        let audioFilename = documentPath.appendingPathComponent("\(Date().toString(dateFormat: "EEE_dd-MM-YY_'at'_HH:mm:ss")).m4a")
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -75,6 +75,20 @@ class AudioRecorder: NSObject, ObservableObject {
         
         objectWillChange.send(self)
 
+        }
+    func deleteRecording(urlsToDelete: [URL]) {
+            
+            for url in urlsToDelete {
+                print(url)
+                do {
+                   try FileManager.default.removeItem(at: url)
+                } catch {
+                    print("File could not be deleted!")
+                }
+            }
+            
+            fetchRecordings()
+            
         }
     
 }

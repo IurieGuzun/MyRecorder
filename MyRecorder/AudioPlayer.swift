@@ -12,7 +12,7 @@ import SwiftUI
 import Combine
 import AVFoundation
 
-class AudioPlayer: ObservableObject {
+class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
     let objectWillChange = PassthroughSubject<AudioPlayer, Never>()
     
@@ -33,6 +33,9 @@ class AudioPlayer: ObservableObject {
                 }
             do {
                     audioPlayer = try AVAudioPlayer(contentsOf: audio)
+                    
+                    audioPlayer.delegate = self
+                
                     audioPlayer.play()
                     isPlaying = true
                 } catch {
@@ -43,5 +46,10 @@ class AudioPlayer: ObservableObject {
     func stopPlayback() {
             audioPlayer.stop()
             isPlaying = false
+        }
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+            if flag {
+                isPlaying = false
+            }
         }
 }

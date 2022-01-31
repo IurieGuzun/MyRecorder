@@ -14,14 +14,28 @@ struct RecordingsList: View {
     var body: some View {
         List {
             ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
+
                 RecordingRow(audioURL: recording.fileURL)
-        }
+                
+                RecordingRow(audioURL: recording.fileURL)
+            }
+            .onDelete(perform: delete)
+//            .onTapGesture(perform: {print("Tap Gesture")})
+          }
     }
-}
+    func delete(at offsets: IndexSet) {
+        
+        var urlsToDelete = [URL]()
+        for index in offsets {
+            urlsToDelete.append(audioRecorder.recordings[index].fileURL)
+        }
+        audioRecorder.deleteRecording(urlsToDelete: urlsToDelete)
+    }
 }
 struct RecordingRow: View {
     
     var audioURL: URL
+    var myURL: String?;     // Added by Iurie
     
     @ObservedObject var audioPlayer = AudioPlayer()
     
@@ -32,6 +46,7 @@ struct RecordingRow: View {
             if audioPlayer.isPlaying == false {
                 Button(action: {
                     print("Start playing audio")
+                    self.audioPlayer.startPlayback(audio: self.audioURL)
                 }) {
                     Image(systemName: "play.circle")
                         .imageScale(.large)
@@ -39,6 +54,7 @@ struct RecordingRow: View {
             } else {
                 Button(action: {
                     print("Stop playing audio")
+                    self.audioPlayer.stopPlayback()
                 }) {
                     Image(systemName: "stop.fill")
                         .imageScale(.large)
