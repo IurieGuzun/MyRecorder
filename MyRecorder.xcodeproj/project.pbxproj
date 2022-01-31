@@ -45,7 +45,6 @@
 		8A11097727A7122F008B81C0 = {
 			isa = PBXGroup;
 			children = (
-				8A11099927A8431A008B81C0 /* AudioPlayer.swift */,
 				8A11098227A7122F008B81C0 /* MyRecorder */,
 				8A11098127A7122F008B81C0 /* Products */,
 			);
@@ -66,6 +65,7 @@
 				8A11099327A728F0008B81C0 /* RecordingsList.swift */,
 				8A11099727A73A6C008B81C0 /* Helper.swift */,
 				8A11098527A7122F008B81C0 /* ContentView.swift */,
+				8A11099927A8431A008B81C0 /* AudioPlayer.swift */,
 				8A11099527A73918008B81C0 /* RecordingDataModel.swift */,
 				8A11099127A722F9008B81C0 /* AudioRecorder.swift */,
 				8A11098727A71232008B81C0 /* Assets.xcassets */,

@@ -13,5 +13,14 @@ import Combine
 import AVFoundation
 
 class AudioPlayer: ObservableObject {
+    
     let objectWillChange = PassthroughSubject<AudioPlayer, Never>()
+    
+    var isPlaying = false {
+            didSet {
+                objectWillChange.send(self)
+            }
+        }
+    var audioPlayer: AVAudioPlayer!
+    
 }
