@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+import Foundation
+import SwiftUI
+import Combine
+import AVFoundation
+
+class AudioPlayer: ObservableObject {
+    let objectWillChange = PassthroughSubject<AudioPlayer, Never>()
+}
