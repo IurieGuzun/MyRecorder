@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var selection: String?   //Added by Iurie
+    
     @ObservedObject var audioRecorder: AudioRecorder
     var body: some View {
         NavigationView {
@@ -42,8 +45,21 @@ struct ContentView: View {
                     }
                 }
             .navigationBarTitle("Voice recorder")
-            .navigationBarItems(trailing: EditButton())
+            .navigationBarItems(leading:  EditButton())
+//            .toolbar {
+//                Button(action: shareButton) {
+//                    Image(systemName: "square.and.arrow.up")
+//                            .foregroundColor(.black)
+//                }
+//            }
+            
         }
+    }
+    func shareButton() {
+            let url = URL(string: "https://designcode.io")
+            let activityController = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+
+            UIApplication.shared.windows.first?.rootViewController!.present(activityController, animated: true, completion: nil)
     }
 }
 
