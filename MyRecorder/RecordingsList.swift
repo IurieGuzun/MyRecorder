@@ -16,8 +16,8 @@ struct RecordingsList: View {
     var body: some View {
         List {
             ForEach(audioRecorder.recordings, id: \.createdAt) { recording in
-                //                Text("\.createdAt")
-                RecordingRow(audioURL: recording.fileURL)
+
+                RecordingRow(audioURL: recording.fileURL, fileSize: recording.fileSize)
             }
             .onDelete(perform: delete)
         }
@@ -41,10 +41,8 @@ struct DetailView: View {
     
     var body: some View {
         VStack {
-            Text(removeLast4(input: "\(record.lastPathComponent)") ?? "")
-            
-            
-            if audioPlayer.isPlaying == false {
+            Text(removeLast7(input: "\(record.lastPathComponent)") ?? "")
+                        if audioPlayer.isPlaying == false {
                 Button(action: {
                     print("Start playing audio")
                     self.audioPlayer.startPlayback(audio: self.record)
@@ -84,12 +82,18 @@ struct DetailView: View {
 struct RecordingRow: View {
     @ObservedObject var audioPlayer = AudioPlayer()
     var audioURL: URL
+    var fileSize: Int
     
     
     var body: some View {
         HStack {
             NavigationLink(destination: DetailView(record: audioURL)) {
-                Text(removeLast4(input: "\(audioURL.lastPathComponent)") ?? "")
+                VStack (alignment: .leading, spacing: 2) {
+                    Text(removeLast7(input: "\(audioURL.lastPathComponent)") ?? "").font(.headline)
+                    Text("Size: \(String(Int(round(Double(fileSize/1024))))) KB")
+ 
+                }
+           
             }
             Spacer()
         }

@@ -15,10 +15,21 @@ func getCreationDate(for file: URL) -> Date {
         return Date()
     }
 }
-func removeLast4(input: String?) -> String? {
+
+func getFileSize(for file: URL) -> Int {
+    if let attributes = try? FileManager.default.attributesOfItem(atPath: file.path) as [FileAttributeKey: Any],
+       let fileSize = attributes[FileAttributeKey.size] as? Int {
+        print("fileSize = ", fileSize)
+        return fileSize
+    } else {
+        return 0
+    }
+}
+
+func removeLast7(input: String?) -> String? {
     var myString = input
-    if myString?.count ?? 0 > 4 {
-        myString?.removeLast(4)
+    if myString?.count ?? 0 > 7 {
+        myString?.removeLast(7)
         
     }
     return myString
